@@ -1,4 +1,4 @@
-package Programming_basic.P01_First_Sreps_In_Coding.lab;
+package Programming_Basic.P01_First_Sreps_In_Coding.lab;
 
 import java.util.Scanner;
 
