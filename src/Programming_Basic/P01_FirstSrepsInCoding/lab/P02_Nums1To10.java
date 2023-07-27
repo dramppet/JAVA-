@@ -1,4 +1,4 @@
-package Programming_Basic.P01_First_Sreps_In_Coding.lab;
+package Programming_Basic.P01_FirstSrepsInCoding.lab;
 
 public class P02_Nums1To10 {
     public static void main(String[] args) {
