@@ -8,10 +8,8 @@ public class P04_EvenPowersOf2 {
 
         int n = Integer.parseInt(sc.nextLine());
 
-        for (int i = 0; i <= n; i++) {
-            if (i % 2 == 0){
-                System.out.println(Math.pow(2,i));
-            }
+        for (int i = 0; i <= n; i+=2) {
+            System.out.printf("%.0f%n",Math.pow(2,i));
         }
     }
 }
