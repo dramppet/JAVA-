@@ -8,17 +8,10 @@ public class P03_AnimalType {
 
         String animalType = sc.nextLine();
 
-        switch (animalType){
-            case "dog":
-                System.out.println("mammal");
-                break;
-            case "crocodile":
-            case "tortoise":
-            case "snake":
-                System.out.println("reptile");
-                break;
-            default:
-                System.out.println("unknown");
+        switch (animalType) {
+            case "dog" -> System.out.println("mammal");
+            case "crocodile", "tortoise", "snake" -> System.out.println("reptile");
+            default -> System.out.println("unknown");
         }
     }
 }
