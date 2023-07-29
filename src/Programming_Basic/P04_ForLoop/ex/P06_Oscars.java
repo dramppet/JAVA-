@@ -7,24 +7,25 @@ public class P06_Oscars {
         Scanner sc = new Scanner(System.in);
 
         String nameActor = sc.nextLine();
-        double pointAcademy = Double.parseDouble(sc.nextLine());
-        int countGury = Integer.parseInt(sc.nextLine());
+        double points = Double.parseDouble(sc.nextLine());
+        int countJudges = Integer.parseInt(sc.nextLine());
 
-        double point = pointAcademy;
 
-        for (int i = 0; i < countGury; i++) {
-            String nameGury = sc.nextLine();
-            double pointGury = Double.parseDouble(sc.nextLine());
+        for (int i = 0; i < countJudges; i++) {
+            String nameJudges = sc.nextLine();
+            double pointJudges = Double.parseDouble(sc.nextLine());
 
-            int len = nameGury.length();
+            points += (nameJudges.length() * pointJudges) / 2;
 
-            point += (nameGury.length() * pointGury) / 2;
+            if (points > 1250.5){
+                break;
+            }
         }
 
-        if (point > 1250.5){
-            System.out.printf("Congratulations, %s got a nominee for leading role with %.1f!", nameActor, point);
-        }else {
-            double dif = 1250.5 - point;
+        if (points > 1250.5) {
+            System.out.printf("Congratulations, %s got a nominee for leading role with %.1f!", nameActor, points);
+        } else {
+            double dif = 1250.5 - points;
             System.out.printf("Sorry, %s you need %.1f more!", nameActor, dif);
         }
     }
