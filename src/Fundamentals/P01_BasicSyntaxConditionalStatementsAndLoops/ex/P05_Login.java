@@ -6,28 +6,28 @@ public class P05_Login {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-//        String userName = sc.nextLine();
-//
-//        String input = sc.nextLine();
-//
-//        int count = 1;
-//
-//        while (true) {
-//
-//            if (count == 4) {
-//                System.out.printf("User %s blocked!", userName);
-//                break;
-//            }
-//            System.out.println("Incorrect password. Try again.");
-//            input = sc.nextLine();
-//            count++;
-//        }
-//        System.out.printf("User %s logged in.", userName);
+        String userName = sc.nextLine();
+        String password = "";
 
-        String input = "Drago";
-        String output;
-        for (int i = input.length(); i >=0 ; i--) {
-            System.out.println();
+        for (int i = userName.length() - 1; i >= 0; i--) {
+            password += userName.charAt(i);
         }
+        String currentPassword = sc.nextLine();
+        int counter = 1;
+        boolean correctPassword = true;
+       while (!password.equals(currentPassword)){
+           if (counter >= 4){
+               correctPassword = false;
+               break;
+           }
+           System.out.println("Incorrect password. Try again.");
+           counter++;
+           currentPassword = sc.nextLine();
+       }
+       if (correctPassword){
+           System.out.printf("User %s logged in.",userName);
+       }else {
+           System.out.printf("User %s blocked!",userName);
+       }
     }
 }

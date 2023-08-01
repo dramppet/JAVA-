@@ -6,38 +6,38 @@ public class P02_ExamPreparation {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int poor = Integer.parseInt(sc.nextLine());
+        int maxPoorGrades = Integer.parseInt(sc.nextLine());
 
-        String command = sc.nextLine();
+        String input = sc.nextLine();
 
-        int sum = 0;
-        int countProblem = 0;
-        int countPoor = 0;
+        int gradesSum = 0;
+        int taskCount = 0;
+        int poorGradesCount = 0;
         boolean poorStudent = false;
-        String problem = "";
+        String lastTask = "";
 
-        while (!command.equals("Enough")) {
+        while (!input.equals("Enough")) {
 
-            int ocenka = Integer.parseInt(sc.nextLine());
-            if (ocenka <= 4){
-                countPoor++;
+            int grade = Integer.parseInt(sc.nextLine());
+            if (grade <= 4) {
+                poorGradesCount++;
             }
-            if (countPoor == poor){
+            if (poorGradesCount == maxPoorGrades) {
                 poorStudent = true;
                 break;
             }
-            sum += ocenka;
-            countProblem++;
-            problem = command;
+            gradesSum += grade;
+            taskCount++;
+            lastTask = input;
 
-            command = sc.nextLine();
+            input = sc.nextLine();
         }
-        if (poorStudent){
-            System.out.printf("You need a break, %d poor grades.",countPoor);
-        }else {
-            System.out.printf("Average score: %.2f%n", ((double)sum / countProblem));
-            System.out.printf("Number of problems: %s%n",countProblem);
-            System.out.printf("Last problem: %s%n",problem);
+        if (poorStudent) {
+            System.out.printf("You need a break, %d poor grades.", poorGradesCount);
+        } else {
+            System.out.printf("Average score: %.2f%n", ((double) gradesSum / taskCount));
+            System.out.printf("Number of problems: %s%n", taskCount);
+            System.out.printf("Last problem: %s%n", lastTask);
         }
     }
 }

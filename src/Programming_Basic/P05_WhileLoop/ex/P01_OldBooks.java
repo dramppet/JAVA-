@@ -8,26 +8,24 @@ public class P01_OldBooks {
 
         String searchedBook = sc.nextLine();
 
-        String command = sc.nextLine();
+        String input = sc.nextLine();
+        int bookCount = 0;
+        boolean isBookFound = false;
 
-        int count = 0;
-        boolean findBook = false;
+        while (!input.equals("No More Books")) {
 
-        while (!command.equals("No More Books")) {
-
-            if (command.equals(searchedBook)) {
-                findBook = true;
+            if (input.equals(searchedBook)) {
+                isBookFound = true;
                 break;
             }
-            count++;
-
-            command = sc.nextLine();
+            bookCount++;
+            input = sc.nextLine();
         }
-        if (findBook){
-            System.out.printf("You checked %d books and found it.",count);
+        if (isBookFound){
+            System.out.printf("You checked %d books and found it.", bookCount);
         }else {
             System.out.println("The book you search is not here!");
-            System.out.printf("You checked %d books.", count);
+            System.out.printf("You checked %d books.", bookCount);
         }
     }
 }
