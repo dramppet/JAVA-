@@ -7,34 +7,35 @@ public class P03_Vacation {
         Scanner sc = new Scanner(System.in);
 
         double needCoinsForVacation = Double.parseDouble(sc.nextLine());
-        double nowCoins = Double.parseDouble(sc.nextLine());
+        double availableAmount = Double.parseDouble(sc.nextLine());
 
         int countSpend = 0;
-        int count = 0;
+        int days = 0;
 
         while (true){
 
             String command =sc.nextLine();
-            double coins = Double.parseDouble(sc.nextLine());
+            double amount = Double.parseDouble(sc.nextLine());
 
             if (command.equals("spend")){
                 countSpend++;
-                nowCoins -= coins;
-                if (nowCoins < 0){
-                    nowCoins = 0;
+                availableAmount -= amount;
+                if (availableAmount < 0){
+                    availableAmount = 0;
                 }
             } else if (command.equals("save")) {
-                nowCoins += coins;
+                countSpend = 0;
+                availableAmount += amount;
             }
-            count++;
+            days++;
 
-            if (nowCoins >= needCoinsForVacation){
-                System.out.printf("You saved the money for %d days.",count);
+            if (availableAmount >= needCoinsForVacation){
+                System.out.printf("You saved the money for %d days.", days);
                 break;
             }
             if (countSpend >=5){
                 System.out.println("You can't save the money.");
-                System.out.printf("%d",count);
+                System.out.printf("%d", days);
                 break;
             }
         }
