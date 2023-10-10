@@ -1,5 +1,6 @@
 package Telerik.Array;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Above_The_Main_Diagonal {
@@ -12,11 +13,11 @@ public class Above_The_Main_Diagonal {
 
         for (int r = 0; r < count_Row_And_Col; r++) {
             for (int c = 0; c < count_Row_And_Col; c++) {
-                matrix[r][c] = (int)Math.pow(2, r + c);
+                matrix[r][c] = (int) Math.pow(2, r + c);
             }
         }
 
-        int sum = 0;
+        long sum = 0;
         for (int i = 0; i < count_Row_And_Col; i++) {
             for (int j = i + 1; j < count_Row_And_Col; j++) {
                 sum += matrix[i][j];
