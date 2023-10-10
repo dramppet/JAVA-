@@ -9,11 +9,11 @@ public class Above_The_Main_Diagonal {
 
         int count_Row_And_Col = Integer.parseInt(sc.nextLine());
 
-        int[][] matrix = new int[count_Row_And_Col][count_Row_And_Col];
+        long[][] matrix = new long[count_Row_And_Col][count_Row_And_Col];
 
         for (int r = 0; r < count_Row_And_Col; r++) {
             for (int c = 0; c < count_Row_And_Col; c++) {
-                matrix[r][c] = (int) Math.pow(2, r + c);
+                matrix[r][c] = (long) Math.pow(2, r + c);
             }
         }
 
